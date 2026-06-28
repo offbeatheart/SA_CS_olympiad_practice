@@ -1,1 +1,1 @@
-2,3,5,7,11
+print(right_truncatable("12943435345"))
