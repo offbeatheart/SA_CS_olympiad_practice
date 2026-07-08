@@ -18,8 +18,6 @@ def palindrome(sentence):
     
     
 # print(palindrome("racecar"))
-
-
 def decimal_to_binary(decimal):
     if decimal == 0:
         return '0'
@@ -32,11 +30,31 @@ def sum_natural_numbers(num): # can only recursively call sum up to 998 items in
         return num 
     return num + sum_natural_numbers(num -1)
     
-print(sum_natural_numbers(998))
+# print(sum_natural_numbers(998))
 
-def iterative_sum_natural_numbers(num):
+def iterative_sum_natural_numbers(num): # can handle foar larger numbers without hitting the space limit 
     sum = 0
     for i in range(1,num+1): sum += i
     return sum
 
-print(iterative_sum_natural_numbers(5000000))
+# print(iterative_sum_natural_numbers(5000000))
+
+def binary_search(group,desired):
+    if group == [desired]:
+        return 0
+    
+    maradien = (len(group) //2) 
+
+    if group[maradien] > desired:
+        return binary_search(group[:maradien],desired) 
+    elif group[maradien] < desired:
+        print(maradien, group[maradien:])
+        return binary_search(group[maradien:],desired) + len(group[:maradien])
+    else:
+        return len(group[:maradien])
+    
+to_do = [1,2,3,4,5,6,7,8,9,10]
+
+print(binary_search(to_do,10))
+
+print
