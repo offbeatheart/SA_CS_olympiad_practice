@@ -54,21 +54,72 @@ def binary_search(group,left, right,desired):
     
     return binary_search(group,mid +1,right,desired)
 
-to_do = [-1,0,1,2,3,4,7,9,10,20]
-print(binary_search(to_do,0,len(to_do),10))
-    # if group == [desired]:
-    #     return 0
-    
-    # maradien = (len(group) //2) 
+# to_do = [-1,0,1,2,3,4,7,9,10,20]
+# print(binary_search(to_do,0,len(to_do),10))
 
-    # if group[maradien] > desired:
-    #     return binary_search(group[:maradien],desired) 
-    # elif group[maradien] < desired:
-    #     print(maradien, group[maradien:])
-    #     return binary_search(group[maradien:],desired) + len(group[:maradien])
-    # else:
-    #     return len(group[:maradien])
-    
-# to_do = [1,2,3,4,5,6,7,8,9,10]
 
-# print(binary_search(to_do,10))
+def merge_sort(group):
+
+    if len(group) == 1 :#or len(group) ==0:
+        
+        return group
+    if len(group) == 2:
+        if  group[0] > group[1]:
+            return [group[1] , group[0]]
+        else:
+            
+            return group
+    else:
+        meridian   = (len(group) // 2)
+
+        return merge(merge_sort(group[:meridian]),merge_sort(group[meridian:]))
+
+def merge(groupA,groupB):
+    new_group = []
+    index1 = 0
+    index2 = 0
+
+    while index1 < len(groupA) and index2 < len(groupB):
+        if groupA[index1] > groupB[index2] :
+            new_group.append(groupB[index2])
+            index2 += 1
+        else:
+            new_group.append(groupA[index1])
+            index1 += 1
+    
+    if index1 < len(groupA):
+         while index1 < len(groupA):
+            new_group.append(groupA[index1])
+            index1 += 1
+             
+    else:
+        while index2 < len(groupB):
+            new_group.append(groupB[index2])
+            index2 += 1
+    return new_group
+        
+
+    # while 
+
+
+    # for x in range(len(groupA + groupA)+1):
+
+
+        # if groupA[index1] > groupB[index2] :
+        #     new_group.append(groupB[index2])
+        #     if len(groupB) == index2 +1:
+        #         pass
+        #     else:
+        #         index2 += 1       
+        # elif groupA[index1] < groupB[index2]:
+        #     new_group.append(groupA[index1])
+        #     if len(groupA) == index1 +1:
+        #         pass
+        #     else:
+        #         index1 += 1 
+
+
+
+
+print(merge_sort([1,2,3,4,5,6,7,3453,345563342,346576856,2343532]))
+    
