@@ -119,7 +119,4 @@ def merge(groupA,groupB):
         #         index1 += 1 
 
 
-
-
-print(merge_sort([1,2,3,4,5,6,7,3453,345563342,346576856,2343532]))
     
