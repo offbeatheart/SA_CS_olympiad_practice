@@ -39,22 +39,36 @@ def iterative_sum_natural_numbers(num): # can handle foar larger numbers without
 
 # print(iterative_sum_natural_numbers(5000000))
 
-def binary_search(group,desired):
-    if group == [desired]:
-        return 0
+def binary_search(group,left, right,desired):
+
+    if left > right:
+        return -1
+
+    mid = (left + right) //2
+
+    if group[mid] == desired:
+        return mid
+    elif desired <  group[mid]:
+
+        return binary_search(group,left,mid-1,desired)
     
-    maradien = (len(group) //2) 
+    return binary_search(group,mid +1,right,desired)
 
-    if group[maradien] > desired:
-        return binary_search(group[:maradien],desired) 
-    elif group[maradien] < desired:
-        print(maradien, group[maradien:])
-        return binary_search(group[maradien:],desired) + len(group[:maradien])
-    else:
-        return len(group[:maradien])
+to_do = [-1,0,1,2,3,4,7,9,10,20]
+print(binary_search(to_do,0,len(to_do),10))
+    # if group == [desired]:
+    #     return 0
     
-to_do = [1,2,3,4,5,6,7,8,9,10]
+    # maradien = (len(group) //2) 
 
-print(binary_search(to_do,10))
+    # if group[maradien] > desired:
+    #     return binary_search(group[:maradien],desired) 
+    # elif group[maradien] < desired:
+    #     print(maradien, group[maradien:])
+    #     return binary_search(group[maradien:],desired) + len(group[:maradien])
+    # else:
+    #     return len(group[:maradien])
+    
+# to_do = [1,2,3,4,5,6,7,8,9,10]
 
-print
+# print(binary_search(to_do,10))
