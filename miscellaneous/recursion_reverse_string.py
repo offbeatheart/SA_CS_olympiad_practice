@@ -98,25 +98,11 @@ def merge(groupA,groupB):
             index2 += 1
     return new_group
         
+def subset(group,curr):
+    pass
 
-    # while 
-
-
-    # for x in range(len(groupA + groupA)+1):
-
-
-        # if groupA[index1] > groupB[index2] :
-        #     new_group.append(groupB[index2])
-        #     if len(groupB) == index2 +1:
-        #         pass
-        #     else:
-        #         index2 += 1       
-        # elif groupA[index1] < groupB[index2]:
-        #     new_group.append(groupA[index1])
-        #     if len(groupA) == index1 +1:
-        #         pass
-        #     else:
-        #         index1 += 1 
+    subset()
 
 
-    
+
+
