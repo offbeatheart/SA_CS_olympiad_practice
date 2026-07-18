@@ -104,5 +104,11 @@ def subset(group,curr):
     subset()
 
 
+# def permutations(group,trim,length):
+#     if len(trim) == length:
+#         return group
+#     else:
+#         for letter in range(length):
+#             permutations(group,trim.append(letter))
 
 
