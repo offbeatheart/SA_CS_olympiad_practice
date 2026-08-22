@@ -17,24 +17,14 @@ seq = []
 template_gen(R,C)
 
 for value in range(1,(R * C) + 1):
-
-    temp = []
-
     if (value %(C - 1)) == 0:
-        temp.append(value)
-        # print((value % C)-1)
-        # print(value // R)
         seq.append(value)
 
 index = 1 
 
-def pretty_printing():
-    for item in whole:
-        print(item)
 
 def indices():
     global whole
-    final = []
     index = -1
     prev = (seq[0]-1)%C
     total = 0
@@ -42,14 +32,12 @@ def indices():
         
         value = (item-1)%C
 
-        final.append(value)
         if prev >= value:
             index += 1
             
         prev = value
 
         total += whole[index][value]
-        # print(whole[index][value])
 
     print(total)
 
