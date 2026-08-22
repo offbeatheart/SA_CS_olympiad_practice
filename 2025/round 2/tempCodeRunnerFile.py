@@ -1,1 +1,1 @@
-nt(final
+(input()
